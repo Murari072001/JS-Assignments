@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=+prompt("Enter the number 1")
+        var o=prompt("Enter the operator")
+        var b=+prompt("Enter the number 2")
+        switch(o){
+            case "+": console.log(a+"+"+b+"="+(a+b)); break
+            case "-": console.log(a+"-"+b+"="+(a-b)); break
+            case "*": console.log(a+"*"+b+"="+(a*b)); break
+            case "/": console.log(a+"/"+b+"="+(a/b)); break
+            case "%": console.log(a+"%"+b+"="+(a%b)); break
+            default: console.log("Enter valid operator")
+        }
+    </script>
+</body>
+</html>
