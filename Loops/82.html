@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num=+prompt("Enter the number");
+        for(var a=0;num!==0;num=parseInt(num/10))
+        {
+            if(num%10!==0)
+            {
+                a=(a*10)+(num%10);
+            }
+        }
+        var i=a;
+        for(var b=0;a!==0;a=parseInt(a/10))
+            {
+                b=(b*10)+(a%10);
+            }
+        console.log(i)
+        console.log(b)
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var c=0;
+        var b="";
+        var bin="";
+        for(var a=8;a!==0;a=parseInt(a/2))
+        {
+
+            c=(a%2).toString();
+            b=b+c;  
+        }
+        for(i=b.length-1;i>=0;i--)
+        {
+            bin=bin+b[i];
+        }
+        console.log(bin)
+    </script>
+</body>
+</html>

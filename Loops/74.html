@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n=+prompt("Enter the number n")
+        var r=+prompt("Enter the number r")
+        var nfact=1;
+        for(var i=n;i>r;i--)
+        {
+            nfact=nfact*i;
+        }
+        var cfact=1;
+        for(var i=n-r;i>=1;i--)
+        {
+            cfact=cfact*i;
+        }
+        console.log(nfact/cfact)
+    </script>
+</body>
+</html>

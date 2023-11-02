@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var a=+prompt("Enter the number 1");
+        var b=+prompt("Enter the number 2");
+        var min;var max;var sum=0;
+        if(a>b){
+            max=a;min=b;
+        }
+        else{
+            max=b;min=a;
+        }
+        for(var i=min;i<=max;i++)
+        {
+            if(i%2===0)
+            sum=sum+i;
+        }
+        console.log(sum)
+    </script>
+</body>
+</html>

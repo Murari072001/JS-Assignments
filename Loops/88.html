@@ -7,14 +7,14 @@
 </head>
 <body>
     <script>
-        var i=1;
-        while(i<=5)
+        var dec=0;
+        var b=+prompt("Enter the binary number")
+        for(var i=0;b!=0;i++)
         {
-            var a=+prompt("Enter the number");
-            if(a%2===0)
-            console.log(a)
-            i++;
+            dec=((b%10)*(2**i))+dec;
+            b=parseInt(b/10);
         }
+        console.log(dec)
     </script>
 </body>
 </html>

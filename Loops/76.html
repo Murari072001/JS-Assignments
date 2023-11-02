@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Docum
+        ent</title>
 </head>
 <body>
     <script>
-        var i=1;
-        while(i<=5)
+        var a=+prompt("Enter the number");
+        var c=0;
+        for(var i=1;i<=a;i++)
         {
-            var a=+prompt("Enter the number");
-            if(a%2===0)
-            console.log(a)
-            i++;
+            if(a%i==0)
+            c++;
         }
+        console.log(c)
     </script>
 </body>
 </html>

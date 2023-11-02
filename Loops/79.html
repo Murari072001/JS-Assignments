@@ -8,19 +8,14 @@
 <body>
     <script>
         var i=1;
-        var min=+Infinity;
-        var max=-Infinity;
+        var s=0;
         while(i<=5)
         {
             var a=+prompt("Enter the number");
-            if(a>max)
-            max=a;
-            if(a<min)
-            min=a;
+            s=s+a;
             i++;
         }
-        console.log(max)
-        console.log(min)
+        console.log(s/5)
     </script>
 </body>
 </html>

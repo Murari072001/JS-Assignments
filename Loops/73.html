@@ -7,14 +7,13 @@
 </head>
 <body>
     <script>
-        var i=1;
-        while(i<=5)
+        var n=+prompt("Enter the number")
+        var fact=1;
+        for(var i=n;i>=1;i--)
         {
-            var a=+prompt("Enter the number");
-            if(a%2===0)
-            console.log(a)
-            i++;
+            fact=fact*i;
         }
+        console.log(fact)
     </script>
 </body>
 </html>
