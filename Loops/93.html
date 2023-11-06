@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=+prompt("Enter the temperature");
+        var u=prompt("Enter the units F or C");
+        switch(u)
+        {
+            case "F": console.log((a-32)*5/9+"C");
+                    break;
+            case "C": console.log((a*9/5)+32+"F");
+                    break;
+            default: console.log("Enter the valid unit")
+        }
+    </script>
+</body>
+</html>

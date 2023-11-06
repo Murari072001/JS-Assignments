@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=[];
+        for(var i=0;i<7;i++)
+        {
+            for(var j=6;j>=i;j--)
+            document.write("&nbsp&nbsp&nbsp")
+            a[i]=[];
+            for(var j=0;j<=i;j++)
+            {
+                if(j==0||j==i)
+                a[i][j]=1;
+                else
+                a[i][j]=a[i-1][j-1]+a[i-1][j];
+            document.write(a[i][j]+"&nbsp&nbsp&nbsp&nbsp")
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

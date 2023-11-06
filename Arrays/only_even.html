@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=[23,34,54,10,4,7];
+        var b=[];
+        var j=0;
+        for(var i=0;i<=a.length-1;i++)
+        {
+            if(a[i]%2===0)
+            {
+            b[j]=a[i];
+            j++;
+            }
+        }
+        for(i=0;i<=b.length-1;i++)
+        document.write(b[i]+" ")
+        document.write("<br>")
+        document.write(b.length)
+    </script>
+</body>
+</html>

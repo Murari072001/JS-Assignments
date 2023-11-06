@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=+prompt("Enter the number");
+        var c1=0;
+        var c2=1;
+        var nt=c1+c2;
+        for(var i=0;i<=a;i++)
+        {
+            if(i<1){
+                console.log(c1);   
+            }
+            else if(i==1)
+            console.log(c2);
+            else
+            {
+            console.log(nt)
+            c1=c2;
+            c2=nt;
+            nt=c1+c2;
+            }
+        }
+    </script>
+</body>
+</html>

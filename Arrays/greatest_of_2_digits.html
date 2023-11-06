@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a=[];
+        var max=0;
+        for(var i=0;i<5;i++)
+        {
+         a[i]=+prompt("Enter the number");
+        }
+        for(i=0;i<=a.length-1;i++)
+        {
+            if(a[i]>9&&a[i]<100)
+            {
+                if(max<a[i])
+                max=a[i]
+            }
+        }
+        document.write(max)
+    </script>
+</body>
+</html>
