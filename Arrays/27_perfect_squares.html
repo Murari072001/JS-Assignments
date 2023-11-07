@@ -14,12 +14,14 @@
         }
         for(i=0;i<=a.length-1;i++)
         {
-            for(j=1;j<=a[i];j++)
-            {
-                r=a[i]/j;
-                if(r==j)
-                console.log(a[i]+" is perfecr square")
-            }
+            // for(j=1;j<=a[i];j++)
+            // {
+            //     var r=a[i]/j;
+            //     if(r==j)
+            //     console.log(a[i]+" is perfect square")
+            // }
+            if(a[i]**0.5 === parseInt(a[i]**0.5))
+            console.log(a[i]+" is perfect square")
         }
     </script>
 </body>
