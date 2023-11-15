@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var marks={
+            "maths":34,
+            "english":56,
+            "science":32,
+            "hindi":75,
+            "social science":65
+        };
+        for(var x in marks)
+        console.log(x,marks[x])
+        console.log(Object.keys(marks))
+        console.log(Object.values(marks))
+        console.log(Object.keys(marks).length)
+        var sum=0;
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+            sum=sum+Object.values(marks)[i];
+        }
+        console.log(sum*100/500)
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]>35)
+           console.log(Object.keys(marks)[i]);
+        }
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]>35)
+           console.log(Object.keys(marks)[i]+":"+"Pass");
+            else
+            console.log(Object.keys(marks)[i]+":"+"Fail")
+        }
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]>35)
+           console.log(Object.keys(marks)[i]);
+        }
+        var c=0
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]>35)
+           c++;
+        }
+        console.log(c)
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]<35)
+           console.log(Object.keys(marks)[i]);
+        }
+        var c=0
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]<35)
+           c++;
+        }
+        console.log(c)
+        var min=Object.values(marks)[0];
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]<min)
+           {
+            min=Object.values(marks)[i];
+            var a=i;
+           }
+        }
+         console.log(Object.keys(marks)[a])
+         var max=Object.values(marks)[0];
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]>max)
+           {
+            max=Object.values(marks)[i];
+            var a=i;
+           }
+        }
+         console.log(Object.keys(marks)[a])
+        var c=0
+        for(var i=0;i<=Object.values(marks).length-1;i++)
+        {
+           if(Object.values(marks)[i]>35)
+           c++;
+        }
+        if(c===Object.keys(marks).length)
+        console.log("Passed all subjects")
+        else
+        console.log("Not passed all subjects")
+        var sub=prompt("Enter the subject")
+        if(marks[sub]>35)
+        console.log(sub,marks[sub],"Pass")
+        else
+        console.log(sub,marks[sub],"Fail")
+    </script>
+</body>
+</html>

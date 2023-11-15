@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function prime(a)
+        {
+            var s="Prime"
+            for(var i=2;i<a;i++)
+            if(a%i===0)
+            {
+            s="Not Prime"
+            break;
+            }
+            return a+" is "+s;
+        }
+        function arm(a)
+        {
+            var s=0;
+            for(var i=a;i>0;i=parseInt(i/10))
+            s=(s)+((i%10)**3);
+            if(s===a)
+            return a+" is "+"Armstrong Number";
+            else
+            return a+" is "+"Not Armstrong Number";
+        }
+        function perfect(a)
+        {
+            var s=0
+            for(var i=1;i<a;i++)
+            if(a%i===0)
+            s=s+i;
+            if(s===a)
+            return a+" is "+"Perfect Number"
+            else
+            return a+" is "+"Not Perfecr Number"
+        }
+        var x=+prompt("Enter the number")
+        console.log(prime(x));
+        console.log(arm(x));
+        console.log(perfect(x));
+    </script>
+</body>
+</html>

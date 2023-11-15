@@ -7,9 +7,16 @@
 </head>
 <body>
     <script>
-        var a=prompt("Enter the string")
-        var b=prompt("Enter the charecter")
-        console.log(a.split(b).length-1)
+        function even(a)
+        {
+            if(a%2===0)
+            return a;
+        }
+        for(var i=1;i<=20;i++)
+        {
+            if(even(i)==i)
+            console.log(i);
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function primes(a,b)
+        {
+            for(var i=a;i<=b;i++)
+            {
+                var c="Prime";
+                for(j=2;j<i;j++)
+                {
+                if(i%j===0)
+                {
+                    c="Not Prime"
+                    break;
+                }
+                }
+                if(c==="Prime")
+                console.log(i+" is "+c)
+            }
+        }
+        var x=+prompt("Enter the staring of range")
+        var y=+prompt("Enter the end of range")
+        primes(x,y);
+    </script>
+</body>
+</html>

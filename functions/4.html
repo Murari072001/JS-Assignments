@@ -7,9 +7,15 @@
 </head>
 <body>
     <script>
-        var a=prompt("Enter the string")
-        var b=prompt("Enter the charecter")
-        console.log(a.split(b).length-1)
+        function fact(a)
+        {
+            var b=1;
+            for(var i=a;i>=1;i--)
+            b*=i;
+            return b;
+        }
+        var factorial=fact(4);
+        console.log(factorial);
     </script>
 </body>
 </html>

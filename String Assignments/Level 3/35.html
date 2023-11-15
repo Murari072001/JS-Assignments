@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s=prompt("Enter the string");
+        var a=0;
+        var d=0;
+        var sc=0;
+        for(var i=0;i<=s.length-1;i++)
+        {
+            var k=s.charCodeAt(i);
+            if((k>=65 && k<=90) || (k>=97 && k<=122))
+            a++;
+            else if(k>=48 && k<=57)
+            d++;
+            else
+            sc++;
+        }
+        console.log("Alphabets: "+ a)
+        console.log("Digits: "+d)
+        console.log("Special Characters: "+sc)
+
+    </script>
+</body>
+</html>

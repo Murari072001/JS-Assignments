@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s=prompt("Enter the string")
+        s=s.split("")
+        var k=[];
+        var j=0
+        for(var i=0;i<=s.length-1;i++)
+        {
+            if(s[i]>='0'&&s[i]<='9')
+            {
+                k[j]=s[i];
+                j++
+            }
+        }
+        console.log(k.join(","))
+    </script>
+</body>
+</html>

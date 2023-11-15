@@ -7,9 +7,12 @@
 </head>
 <body>
     <script>
-        var a=prompt("Enter the string")
-        var b=prompt("Enter the charecter")
-        console.log(a.split(b).length-1)
+        var s=prompt("Enter the string");
+        for(var i=2;i<=7;i++)
+        {
+            s=s.replace(s[i],'X')
+        }
+        console.log(s)
     </script>
 </body>
 </html>

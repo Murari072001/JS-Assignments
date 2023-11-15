@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s=prompt("Enter the string")
+        var c=prompt("Enter the character")
+        // var k=s.split(c).join('');
+        
+        // var k=s.replaceAll(c,'')
+
+        var k='';
+        for(var i=0;i<s.length;i++)
+        {
+            if(s[i]!==c)
+            k+=s[i];
+        }
+        console.log(k)
+    </script>
+</body>
+</html>

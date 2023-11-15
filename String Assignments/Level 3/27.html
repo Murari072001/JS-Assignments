@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s1=prompt("Enter the string 1")
+        var s2=prompt("Enter the string 2")
+        a=s1.split('');
+        b=s2.split('');
+        for(var i=0;i<a.length;i++)
+        {
+            for(var j=i;j<a.length;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    var temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        for(var i=0;i<b.length;i++)
+        {
+            for(var j=i;j<b.length;j++)
+            {
+                if(b[i]>b[j])
+                {
+                    var temp=b[i];
+                    b[i]=b[j];
+                    b[j]=temp;
+                }
+            }
+        }
+        a=a.join('')
+        b=b.join('')
+        if(a==b)
+        console.log(s1+" and "+s2+" are anagrams")
+        else
+        console.log(s1+" and "+s2+" are Not anagrams")
+    </script>
+</body>
+</html>

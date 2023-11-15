@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s=prompt("Enter the string")
+        var k='';
+        // for(var i=0;i<=s.length-1;i++)
+        // {
+        //     for(var j=i;j<=s.length-1;j++)
+        //     {
+        //         if(s[i]===s[j+1])
+        //         {
+        //             k=k+s[i];
+        //         }
+        //     }
+        // }
+        // for(var i=0;i<=k.length-1;i++)
+        // {
+        //     s=s.replaceAll(k[i],'');
+        // }
+        for(var i=0;i<s.length;i++)
+        {
+            for(var j=i;j<s.length;j++)
+            {
+                if(s[i]===s[j+1])
+                s=s.split(s[i]).join('');
+            }
+        }
+        console.log(s)
+    </script>
+</body>
+</html>

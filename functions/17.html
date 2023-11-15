@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function arm(a)
+        {
+            var k=0
+            for(var i=a;i>0;i=parseInt(i/10))
+            {
+                k+=((i%10)**3);
+            }
+            if(k===a)
+            return "Armstrong Number";
+            else
+            return "Not Armstrong Number";
+        }
+        console.log(arm(+prompt("Enter the number")))
+    </script>
+</body>
+</html>

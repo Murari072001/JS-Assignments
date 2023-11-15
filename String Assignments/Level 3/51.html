@@ -7,9 +7,14 @@
 </head>
 <body>
     <script>
-        var a=prompt("Enter the string")
-        var b=prompt("Enter the charecter")
-        console.log(a.split(b).length-1)
+        var s=prompt("Enter the string")
+        var k='';
+        for(var i=0;i<=s.length-1;i++)
+        {
+            if(!(s[i]>='0'&& s[i]<='9'))
+            k += s[i];
+        }
+        console.log(k)
     </script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var s=prompt("Enter the string");
+        var count=0;
+        var mincount=s.length;
+        // for(var i=0;i<=s.length-1;i++)
+        // {
+        //     for(var j=0;j<=s.length-1;j++)
+        //     {
+        //         if(s[i]===s[j])
+        //         count++;
+        //     }
+        //     if(mincount>count)
+        //     {
+        //         mincount=count;
+        //         var a=i;
+        //     }
+        //     count=0;
+        // }
+        for(var i=0;i<=s.length-1;i++)
+        {
+        var k=s.split(s[i]).length-1;
+            if(mincount>k)
+            {
+                mincount=k;
+                var a=i;
+            }
+        }
+        console.log(s[a],mincount)
+    </script>
+</body>
+</html>

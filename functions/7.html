@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function palin(a)
+        {
+            var k=0;
+            for(var i=a;a>0;a=parseInt(a/10))
+            {
+                k =(k*10)+ a%10;
+            }
+            if(i==k)
+            return ("palindrome");
+            else
+            return ("Not palindrome");
+        }
+        var num=palin(12321);
+        console.log(num)
+    </script>
+</body>
+</html>

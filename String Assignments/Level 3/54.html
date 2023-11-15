@@ -7,9 +7,11 @@
 </head>
 <body>
     <script>
-        var a=prompt("Enter the string")
-        var b=prompt("Enter the charecter")
-        console.log(a.split(b).length-1)
+        var s=prompt("Enter the string")
+        var X='X';
+        var k=s.split("");
+        k.splice(0,12,'X'.repeat(12));
+        console.log(k.join(''))
     </script>
 </body>
 </html>

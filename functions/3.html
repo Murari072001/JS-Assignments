@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sortNums(a,b,c)
+        {
+            if(a<b&&a<c)
+            {
+                if(b<c)
+                return (a+","+b+","+c);
+                else
+                return (a+","+c+","+b)
+            }
+            else if(b<a&&b<c)
+            {
+                if(a<c)
+                return (b+","+a+","+c);
+                else
+                return (b+","+c+","+a)
+            }
+            else
+            {
+                if(b<a)
+                return (c+","+b+","+a);
+                else
+                return (c+","+a+","+b)
+            }
+        }
+        var ascending=sortNums(45,7,68)
+        console.log(ascending)
+    </script>
+</body>
+</html>
