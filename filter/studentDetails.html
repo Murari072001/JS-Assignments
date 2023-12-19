@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body{
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-group" style="display: flex;justify-content: space-evenly;">
+        <div class="card p-2" id="block1" style="border: 1px solid black;width: 300px;height: auto;text-align: center;">
+            <h3 class="card-title">Student Details</h3>
+            <table class="card-text" id="table" style="margin-left: auto;margin-right: auto;">
+
+            </table>
+        </div>
+        <div class="card p-2" id="block2" style="border: 1px solid black;width: 300px;height: auto;text-align: center;">
+            <h3 class="card-title">Feedback</h3>
+            <div id="feedbackblock">
+                <table class="card-text" id="table1" style="margin-left: auto;margin-right: auto;">
+
+                </table>
+            </div>
+        </div>
+        <div class="card p-2" id="block3" style="border: 1px solid black;width: 300px;height: auto;text-align: center;">
+            <h3 class="card-title">New Feedback</h3>
+            <form class="card-text" name="dataform" onsubmit="event.preventDefault()">
+                Date : <input type="date" name="date" id="inputdate" value="date">
+                <br>
+                Interest : <select name="interest" id="inputinterest">
+                    <option value="" selected disabled>Select option</option>
+                    <option value="interested">Interest</option>
+                    <option value="not interested">Not Interest</option>
+                </select>
+                <br>
+                Next Call : <input type="date" name="nextcall" id="inputnextcall" value="nextcall">
+                <br>
+                Remarks : <textarea name="remarks" id="inputremarks" value="remarks" cols="25" rows="2"></textarea>
+                <br><br>
+                <button class="btn btn-primary" onclick="update()">Save</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        let url = new URL(window.location.href);
+        let currentPhoneNumber = url.searchParams.get('phonenumber');
+        var enquiries = JSON.parse(window.localStorage.getItem('enquiries'));
+        var student = enquiries.find((enq) => {
+            return enq.phonenumber === currentPhoneNumber;
+        })
+
+        var table = document.querySelector('#table');
+        var feedbackblock = document.querySelector('#feedbackblock');
+        var feedbacktable = document.querySelector('#table1');
+        function enquiryform() {
+
+            var a = document.createElement("tr");
+            var b = document.createElement("td");
+            var colon1 = document.createElement("td");
+            var c = document.createElement("td");
+
+            var n = document.createElement("tr");
+            var d = document.createElement("td");
+            var colon2 = document.createElement("td");
+            var e = document.createElement("td");
+
+            var o = document.createElement("tr");
+            var f = document.createElement("td");
+            var colon3 = document.createElement("td");
+            var g = document.createElement("td");
+
+            var p = document.createElement("tr");
+            var h = document.createElement("td");
+            var colon4 = document.createElement("td");
+            var i = document.createElement("td");
+
+            var q = document.createElement("tr");
+            var j = document.createElement("td");
+            var colon5 = document.createElement("td");
+            var k = document.createElement("td");
+
+            var r = document.createElement("tr");
+            var l = document.createElement("td");
+            var colon6 = document.createElement("td");
+            var m = document.createElement("td");
+
+            b.innerHTML = "Name";
+            colon1.innerHTML = ":";
+            c.innerHTML = student.name;
+            d.innerHTML = "Mobile";
+            colon2.innerHTML = ":";
+            e.innerHTML = student.phonenumber;
+            f.innerHTML = "Email";
+            colon3.innerHTML = ":";
+            g.innerHTML = student.email;
+            h.innerHTML = "Courses";
+            colon4.innerHTML = ":";
+            i.innerHTML = student.course;
+            j.innerHTML = "Mode";
+            colon5.innerHTML = ":";
+            k.innerHTML = student.mode;
+            l.innerHTML = "Date";
+            colon6.innerHTML = ":";
+            m.innerHTML = student.enqDate;
+
+            a.appendChild(b);
+            a.appendChild(colon1);
+            a.appendChild(c);
+            n.appendChild(d);
+            n.appendChild(colon2);
+            n.appendChild(e);
+            o.appendChild(f);
+            o.appendChild(colon3);
+            o.appendChild(g);
+            p.appendChild(h);
+            p.appendChild(colon4);
+            p.appendChild(i);
+            q.appendChild(j);
+            q.appendChild(colon5);
+            q.appendChild(k);
+            r.appendChild(l);
+            r.appendChild(colon6);
+            r.appendChild(m);
+
+
+            table.appendChild(a);
+            table.appendChild(n);
+            table.appendChild(o);
+            table.appendChild(p);
+            table.appendChild(q);
+            table.appendChild(r);
+
+            feedback();
+        }
+
+
+
+        enquiryform();
+        function feedback() {
+            feedbacktable.innerHTML = "";
+            student.feedback.forEach((d) => {
+                var fdiv = document.createElement('div');
+                var ftr1 = document.createElement('tr');
+                var ftd1 = document.createElement('td');
+                var ftd2 = document.createElement('td');
+                var ftd3 = document.createElement('td');
+
+                var ftr2 = document.createElement('tr');
+                var ftd4 = document.createElement('td');
+                var ftd5 = document.createElement('td');
+                var ftd6 = document.createElement('td');
+
+                var ftr3 = document.createElement('tr');
+                var ftd7 = document.createElement('td');
+                var ftd8 = document.createElement('td');
+                var ftd9 = document.createElement('td');
+
+                var ftr4 = document.createElement('tr');
+                var ftd10 = document.createElement('td');
+                var ftd11 = document.createElement('td');
+                var ftd12 = document.createElement('td');
+
+                ftd1.innerHTML = "Date";
+                ftd2.innerHTML = ":";
+                ftd3.innerHTML = d.date;
+
+                ftd4.innerHTML = "Remarks";
+                ftd5.innerHTML = ":";
+                ftd6.innerHTML = d.remark;
+
+                ftd7.innerHTML = "Interest";
+                ftd8.innerHTML = ":";
+                ftd9.innerHTML = d.interest;
+
+                ftd10.innerHTML = "Next Call";
+                ftd11.innerHTML = ":";
+                ftd12.innerHTML = d.nextCall;
+
+                ftr1.appendChild(ftd1);
+                ftr1.appendChild(ftd2);
+                ftr1.appendChild(ftd3);
+
+                ftr2.appendChild(ftd4);
+                ftr2.appendChild(ftd5);
+                ftr2.appendChild(ftd6);
+
+                ftr3.appendChild(ftd7);
+                ftr3.appendChild(ftd8);
+                ftr3.appendChild(ftd9);
+
+                ftr4.appendChild(ftd10);
+                ftr4.appendChild(ftd11);
+                ftr4.appendChild(ftd12);
+
+                fdiv.appendChild(ftr1);
+                fdiv.appendChild(ftr2);
+                fdiv.appendChild(ftr3);
+                fdiv.appendChild(ftr4);
+                feedbacktable.appendChild(fdiv);
+                feedbackblock.appendChild(feedbacktable);
+
+                fdiv.style.border = "1px solid red";
+                fdiv.style.marginBottom = "5px";
+            })
+        }
+        function update() {
+            var inputdate = document.getElementById('inputdate').value;
+            var inputremarks = document.getElementById('inputremarks').value;
+            var inputinterest = document.getElementById('inputinterest').value;
+            var inputnextcall = document.getElementById('inputnextcall').value;
+            var formstudent = {
+                "date": inputdate,
+                "remarks": inputremarks,
+                "interest": inputinterest,
+                "nextCall": inputnextcall
+            };
+            console.log(student.feedback)
+            student.feedback.push(formstudent);
+            console.log(student.feedback)
+
+            currindex = enquiries.findIndex((enq) => {
+                return enq.phonenumber === currentPhoneNumber;
+            })
+            console.log(enquiries[currindex])
+            enquiries[currindex] = student;
+            console.log(enquiries)
+            window.localStorage.setItem('enquiries', JSON.stringify(enquiries));
+
+            enquiries = JSON.parse(window.localStorage.getItem('enquiries'));
+            console.log(enquiries)
+            student = enquiries.find((enq) => {
+                return enq.phonenumber === currentPhoneNumber;
+            })
+            console.log(student)
+            feedback();
+            dataform.reset(); 
+        }
+    </script>
+</body>
+
+</html>

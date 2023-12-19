@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function arm(a,b)
+        {
+            for(var i=a;i<=b;i++)
+            {
+                var k=0;
+                for(var j=i;j>0;j=parseInt(j/10))
+                k++;
+                var c=0;
+                for(var j=i;j>0;j=parseInt(j/10))
+                {
+                    c=c+((j%10)**k);
+                }
+                if(c===i)
+                console.log(i)
+            }
+        }
+        arm(+prompt("Enter the start range"),+prompt("Enter the end range"))
+    </script>
+</body>
+</html>

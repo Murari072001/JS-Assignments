@@ -1,0 +1,34 @@
+<html>
+    <head></head>
+    <body>
+        <h1 style="text-align: center;">
+            <div id="img1" onmouseover="goto(event)" style="background-image: url('https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Yamaha-MT-15-V2-180520221153.png&w=872&h=578&q=75&c=1');background-size: 100%;"></div>
+            <div id="img2" onmouseover="goto(event)" style="background-image: url('https://hips.hearstapps.com/hmg-prod/images/2023-chevrolet-corvette-z06-002-1635950091.jpg?crop=1xw:1xh;center,top&resize=980:*');background-size: 100%;"></div>
+            <div id="img3" onmouseover="goto(event)" style="background-image: url('https://www.forefronttours.com/wp-content/uploads/2019/05/volvo_bus.jpg');background-size: 100%;"></div>
+        </h1>
+        <h1 style="text-align: center;">
+            <div id="image"></div>
+        </h1>
+        <script>
+            var im=document.querySelectorAll("div")
+            im.forEach(a=>{
+                a.style.width="350px"
+                a.style.height="235px"
+                a.style.border="2px solid black"
+                a.style.display="inline-block"
+            })
+
+            function goto(e)
+            {
+                var image=document.getElementById("image");
+                console.log(e.target.style.backgroundImage);
+                image.style.backgroundImage=e.target.style.backgroundImage;
+                image.style.backgroundSize="100%"
+            }
+        </script>
+    </body>
+</html>
+<!-- 
+    
+    
+ -->

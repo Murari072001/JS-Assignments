@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: rgb(161, 238, 234);
+            padding: 10px;
+        }
+        #mainDiv {
+            display: flex;
+            margin: 20px;
+        }
+
+        #formDiv {
+            border: 1px solid;
+        }
+        .bi-caret-down-fill,.bi-caret-up-fill{
+            font-size: 10px;
+            margin-top:-2px;
+            margin-bottom:-2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex mx-4">
+        <a href="index.html">Back to Registration Form</a>
+        <div class="ms-auto">
+            Search : <input type="text" style="width: 200px;" name="search" placeholder="Enter name,number or email"
+            onkeyup="checkSearch(event)" >
+        </div>
+        
+    </div>
+    
+    <div id="mainDiv" ></div>
+
+    <div id="formDiv" class="p-2 me-4 shadow-lg p-3 mb-5 bg-primary-subtle rounded">
+        <form action="" name="enquiryForm" onsubmit="event.preventDefault()">
+            <div class="border border-black p-2 mb-1">
+                <p>Interest:</p>
+                <input type="radio" name="interest" value="interested" onchange="checkInterest()"><label
+                    for="">Interested</label> <br><br>
+                <input type="radio" name="interest" value="not interested" onchange="checkInterest()"><label for=""> Not
+                    Interested</label><br><br>
+                <input type="radio" name="interest" value="all" onchange="checkInterest()" checked><label
+                    for="">All</label>
+            </div>
+            <div class="border border-black p-2 mb-1">
+                <p>Mode:</p>
+                <input type="radio" name="mode" value="online" onchange="checkMode()"><label
+                    for="">Online</label><br><br>
+                <input type="radio" name="mode" value="offline" onchange="checkMode()"><label
+                    for="">Offline</label><br><br>
+                <input type="radio" name="mode" value="all" onchange="checkMode()" checked><label for="">All</label>
+            </div>
+            <div class="border border-black p-2 mb-1">
+                <p>Courses:</p>
+                <input type="checkbox" name="courses" id="" value="frontend with angular"
+                    onchange="checkCourse()"><label>Angular</label><br><br>
+                <input type="checkbox" name="courses" id="" value="frontend with react"
+                    onchange="checkCourse()"><label>React.JS</label><br><br>
+                <input type="checkbox" name="courses" id="" value="mean"
+                    onchange="checkCourse()"><label>MEAN</label><br><br>
+                <input type="checkbox" name="courses" id="" value="mern"
+                    onchange="checkCourse()"><label>MERN</label><br><br>
+                <input type="checkbox" name="courses" id="" value="fullStack JAVA" onchange="checkCourse()"><label>Full
+                    Stack
+                    JAVA</label><br><br>
+                <input type="checkbox" name="courses" id="" value="devops"
+                    onchange="checkCourse()"><label>DevOps</label>
+            </div>
+            <div class="border border-black p-2 mb-1">
+                <p>Enquiry Range:</p>
+                <label for="">Start Date:</label> <input type="date" name="startDate"
+                    onchange="checkStartDate()"><br><br>
+                <label for="">End Date:</label> <input type="date" name="endDate" onchange="checkEndDate()">
+            </div>
+        </form>
+
+    </div>
+
+    <div id="tbDiv" class="w-100">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th onclick="checkSort('name')" style="cursor: pointer;">
+                        <span>Name</span>
+                    </th>
+                    <th onclick="checkSort('phonenumber')" style="cursor:pointer;">
+                        <span>Phone number</span>
+                    </th>
+                    <th onclick="checkSort('email')" style="cursor: pointer;">
+                        <span>Email</span>
+                    </th>
+                    <th>Course</th>
+                    <th onclick="checkSort('date')" style="cursor: pointer;">
+                        <span>Date</span>
+                    </th>
+                    <th>Feedback</th>
+                </tr>
+            </thead>
+            <tbody id="tb">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var mainDiv = document.getElementById('mainDiv');
+        var formDiv = document.getElementById('formDiv');
+        var tableDiv = document.getElementById('tbDiv');
+        var tbody = document.getElementById('tb');
+
+        mainDiv.appendChild(formDiv);
+        mainDiv.appendChild(tableDiv);
+
+        var studentEnquiry = JSON.parse(window.localStorage.getItem('enquiries'));
+
+        var interest = enquiryForm.interest.value;
+        var mode = enquiryForm.mode.value;
+        var coursearray = [];
+        var dateRange = [];
+        var searchValue = "";
+        var sortValue = '';
+        var sortorder = '';
+       
+        function checkInterest() {
+            studentEnquiry = JSON.parse(window.localStorage.getItem('enquiries'));
+            interest = enquiryForm.interest.value;
+            checkAndRunFilters()
+            createTable(studentEnquiry)
+        }
+
+        function checkMode() {
+            studentEnquiry = JSON.parse(window.localStorage.getItem('enquiries'));
+            mode = enquiryForm.mode.value;
+            checkAndRunFilters()
+            createTable(studentEnquiry)
+        }
+
+        function checkCourse() {
+            studentEnquiry = JSON.parse(window.localStorage.getItem('enquiries'));
+            coursearray = [];
+            enquiryForm.courses.forEach(function (course, i) {
+                if (course.checked === true) {
+                    coursearray.push(course.value)
+                }
+            })
+            checkAndRunFilters()
+            createTable(studentEnquiry)
+        }
+
+        function checkStartDate() {
+            studentEnquiry = JSON.parse(window.localStorage.getItem('enquiries'));
+            dateRange[0] = enquiryForm.startDate.value;
+            checkAndRunFilters()
+            createTable(studentEnquiry)
+        }
+
+        function checkEndDate() {
+            studentEnquiry = JSON.parse(window.localStorage.getItem('enquiries'));
+            dateRange[1] = enquiryForm.endDate.value;
+            checkAndRunFilters()
+            createTable(studentEnquiry)
+        }
+
+        function checkSearch(e) {
+            studentEnquiry = JSON.parse(window.localStorage.getItem('enquiries'));
+            searchValue = e.target.value;
+            checkAndRunFilters()
+            createTable(studentEnquiry)
+        }
+
+        function checkSort(value) {
+            if (sortValue === value) {
+                if (sortorder === 'asc') {
+                    sortorder = 'dsc';
+                    studentEnquiry.sort(function (a, b) {
+                        if (a[value].toLowerCase() > b[value].toLowerCase()) {
+                            return -1
+                        }
+                        if (a[value].toLowerCase() < b[value].toLowerCase()) {
+                            return 1
+                        }
+                        return 0;
+                    })
+                }
+                else {
+                    sortorder = 'asc';
+                    studentEnquiry.sort(function (a, b) {
+                        if (a[value].toLowerCase() > b[value].toLowerCase()) {
+                            return 1
+                        }
+                        if (a[value].toLowerCase() < b[value].toLowerCase()) {
+                            return -1
+                        }
+                        return 0;
+                    })
+                }
+            }
+            else {
+                sortValue = value;
+                sortorder = 'asc';
+
+                studentEnquiry.sort(function (a, b) {
+                    if (a[value].toLowerCase() > b[value].toLowerCase()) {
+                        return 1
+                    }
+                    if (a[value].toLowerCase() < b[value].toLowerCase()) {
+                        return -1
+                    }
+                    return 0;
+                })
+            }
+            createTable(studentEnquiry);
+        }
+
+
+        function filterInterest(intStatus) {
+            studentEnquiry = studentEnquiry.filter(function (student) {
+                return student.feedback[student.feedback.length - 1].interest === intStatus
+            })
+            
+        }
+
+        function filterMode(modeStatus) {
+            studentEnquiry = studentEnquiry.filter(function (student) {
+                return student.mode === modeStatus;
+            })
+        }
+
+        function filterCourses(cArray) {
+            studentEnquiry = studentEnquiry.filter(function (student) {
+                return student.course.some(function (a) {
+                    return cArray.includes(a);
+                })
+            })
+        }
+
+        function filterDateRange(dr) {
+            if (dr[0] > dr[1]) {
+                alert("Invalid date range");
+            }
+            else {
+                studentEnquiry = studentEnquiry.filter(function (student) {
+                    return (normalizeDate(student.enqDate) >= normalizeDate(dr[0]) && normalizeDate(student.enqDate) <= normalizeDate(dr[1]));
+                })
+            }
+        }
+
+        function normalizeDate(dat) {
+            var dateObj = new Date(dat);
+            dateObj.setHours(0, 0, 0, 0);
+            return dateObj;
+        }
+
+
+        function filterSearch(value) {
+            studentEnquiry = studentEnquiry.filter((student) => {
+                // return (student.name.toLowerCase().startsWith(value.toLowerCase()) || student.phonenumber.startsWith(value) || student.email.startsWith(value))
+                return Object.values(student).some((val) => { return val.toString().includes(value) });
+            })
+        }
+
+        function checkAndRunFilters() {
+            if (interest !== "all") {
+                filterInterest(interest);
+            }
+            if (mode !== "all") {
+                filterMode(mode);
+            }
+            if (coursearray.length > 0) {
+                filterCourses(coursearray);
+            }
+            if (dateRange.length === 2 && !dateRange.includes(undefined)) {
+                filterDateRange(dateRange);
+            }
+            if (searchValue.length > 0) {
+                filterSearch(searchValue)
+            }
+        }
+
+
+        function createTable(studentList) {
+            tbody.innerHTML = '';
+            studentList.forEach(function (student, index) {
+                var newrow = document.createElement("tr");
+                var studentname = document.createElement("td");
+                var studentLink = document.createElement("a");
+                studentLink.href = `studentDetails.html?phonenumber=${student['phonenumber']}`;
+                studentLink.innerHTML = student["name"];
+                studentLink.target = '_blank';
+                studentLink.style.textDecoration = 'none'
+                studentname.appendChild(studentLink);
+                newrow.appendChild(studentname);
+
+                var studentmobile = document.createElement("td");
+                studentmobile.innerHTML = student["phonenumber"];
+                newrow.appendChild(studentmobile);
+
+                var studentemail = document.createElement("td");
+                studentemail.innerHTML = student["email"];
+                newrow.appendChild(studentemail);
+
+                var studentcourse = document.createElement("td");
+                studentcourse.innerHTML = student["course"];
+                newrow.appendChild(studentcourse);
+
+                var studentdate = document.createElement("td");
+                studentdate.innerHTML = student["enqDate"];
+                newrow.appendChild(studentdate);
+
+                var studentremarks = document.createElement("td");
+                studentremarks.innerHTML = student.feedback[student.feedback.length - 1]["interest"];
+                newrow.appendChild(studentremarks)
+
+                tbody.appendChild(newrow)
+            })
+        }
+        createTable(studentEnquiry)
+
+
+    </script>
+</body>
+
+</html>

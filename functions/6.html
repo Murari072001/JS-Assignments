@@ -7,19 +7,26 @@
 </head>
 <body>
     <script>
-        function prime(a)
+        function prime(a,b)
         {
-            var s="Prime";
+            var s=0;
+            if(a<=1)
+            b('The number must be greater than 2',null)
+            else {
             for(var i=2;i<a;i++)
             if(a%i===0)
             {
-                s="Not prime";
-                break;
+                s++;
             }
-            return s;
+            if(s===0)
+            b(null,'Prime');
+            else
+            b(null,'Not Prime')
+            }
         }
-        var pm=prime(11);
-        console.log(pm)
+        prime(+prompt("Enter the number"),function(err,res){
+            err?console.log(err):console.log(res)
+        })
     </script>
 </body>
 </html>

@@ -7,9 +7,12 @@
 </head>
 <body>
     <script>
-        function prime(a)
+        function prime(a,b)
         {
-            var s="Prime";
+            if(a<0)
+            b('Enter a positive number',null)
+            else{
+                var s="Prime";
             for(var i=2;i<a;i++)
             if(a%i===0)
             {
@@ -17,6 +20,7 @@
                 break;
             }
             return s;
+            }
         }
         console.log(prime(+prompt("Enter the number")))
     </script>

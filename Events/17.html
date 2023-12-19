@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: darkkhaki;">
+    <h1 style="text-align: center;color: red;">Photo Carousel</h1>
+    <div style="text-align: center;">
+        <button onclick="prev()" style="background-color: orange;">Previous</button>
+        <div id="imgbox" style="background-image: url(https://hips.hearstapps.com/hmg-prod/images/2023-chevrolet-corvette-z06-002-1635950091.jpg?crop=1xw:1xh;center,top&resize=980:*);background-size: 100%;"></div>
+        <button onclick="next()" style="background-color: orange;">Next</button>
+    </div>
+   <script>
+        var im=document.getElementById("imgbox")
+        im.style.width="300px";
+        im.style.display="inline-block"
+        im.style.height="200px";
+        var ar=['https://hips.hearstapps.com/hmg-prod/images/2023-chevrolet-corvette-z06-002-1635950091.jpg?crop=1xw:1xh;center,top&resize=980:*','https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Yamaha-MT-15-V2-180520221153.png&w=872&h=578&q=75&c=1','https://www.forefronttours.com/wp-content/uploads/2019/05/volvo_bus.jpg','https://i.ytimg.com/vi/2er4NGyt9KA/mqdefault.jpg']
+        var i=0
+        function next(){
+            i++;
+            if(i===ar.length)
+            i=0;
+            var image=document.getElementById("imgbox");
+            var im="url("+ar[i]+")"
+            image.style.backgroundImage=im;
+        }
+        function prev(){
+            if(i===0)
+            i=ar.length;
+            i--;
+            var image=document.getElementById("imgbox");
+            var im="url("+ar[i]+")"
+            image.style.backgroundImage=im;
+        }
+    </script>
+</body>
+</html>

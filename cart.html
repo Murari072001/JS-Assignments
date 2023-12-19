@@ -1,0 +1,202 @@
+<html>
+    <head></head>
+    <body>
+        <div id="homepage"></div>
+        <div id="productspage"></div>
+        <div id="cartpage"></div>
+        <script>
+            var mainpage=document.getElementById("homepage")
+            var productpage=document.getElementById("productspage");
+            var cartitemspage=document.getElementById("cartpage");
+            mainpage.style.display="flex"
+            productpage.style.display="flex";
+            productpage.style.flexWrap="wrap";
+            // cartitemspage.style.display="";
+            productpage.style.width="60%";
+            cartitemspage.style.width="40%";
+            // homepage.style.height="100%";
+            // productpage.style.height="100%";
+            // cartitemspage.style.height="100%";
+            productpage.style.borderStyle="solid";
+            productpage.style.borderColor="brown";
+            cartitemspage.style.borderStyle="solid";
+            cartitemspage.style.borderColor="blue";
+            productpage.style.padding="2px";
+            productpage.style.margin="2px";
+            cartitemspage.style.padding="2px";
+            cartitemspage.style.margin="2px"
+            mainpage.appendChild(productpage);
+            mainpage.appendChild(cartitemspage);
+            var cartlist=[];
+            var products = [
+                            {
+                                "NAME": "Duracell - AAA Batteries (4-Pack)",
+                                "TYPE": "HardGood",
+                                "PRICE": 5.49,
+                                "CATEGORY": "Household Batteries",
+                                "MANUFACTURER": "Duracell",				
+                            },
+                            {
+                                "NAME": "Hard Rock TrackPak - Mac",
+                                "TYPE": "Software",
+                                "PRICE": 29.99,
+                                "CATEGORY": "Recording Equipment",
+                                "MANUFACTURER": "Hal Leonard",				
+                            },
+                            {
+                                "NAME": "Duracell - AA 1.5V CopperTop Batteries (4-Pack)",
+                                "TYPE": "HardGood",
+                                "PRICE": 5.62,
+                                "CATEGORY": "Household Batteries",
+                                "MANUFACTURER": "Duracell",				
+                            },
+                            {
+                                "NAME": "Energizer - MAX Batteries AA (4-Pack)",
+                                "TYPE": "HardGood",
+                                "PRICE": 5.32,
+                                "CATEGORY": "Household Batteries",
+                                "MANUFACTURER": "Energizer",				
+                            },
+                            {
+                                "NAME": "METRA - Antenna Cable Adapter - Black",
+                                "TYPE": "HardGood",
+                                "PRICE": 13.99,
+                                "CATEGORY": "Antennas & Adapters",
+                                "MANUFACTURER": "Metra",				
+                            },
+                            {
+                                "NAME": "WipeDrive Six - Mac|Windows",
+                                "TYPE": "Software",
+                                "PRICE": 23.99,
+                                "CATEGORY": "Maintenance Software",
+                                "MANUFACTURER": "White Canyon",				
+                            }
+                        ];
+            
+            function createproductspage(productitem){
+                productpage.innerHTML="";
+                cartitemspage.innerHTML="";
+                productitem.forEach(function(product,index){
+                    var productbox=document.createElement("p")
+                       Object.keys(product).forEach(function(a,b){
+                        var listbox=document.createElement("div")
+                        listbox.innerHTML=a+":"+product[a];
+                        productbox.appendChild(listbox)
+                       })
+                    var addtocart=document.createElement("button");
+                    addtocart.innerHTML="Add To Cart-->";
+                    productbox.appendChild(addtocart)
+                    productpage.appendChild(productbox)
+                    addtocart.onclick=function(){
+                            var newobj=JSON.parse(JSON.stringify(product))
+                            newobj["count"]=1;
+                            addtocart.disabled="true"
+                            addtocart.style.backgroundColor="black"
+                            addtocart.innerHTML="Added to Cart"
+                            cartlist.push(newobj);
+                            createcart(cartlist);
+                            totalprice(cartlist)
+                    }
+
+                    addtocart.style.backgroundColor="blue"
+                    addtocart.style.color="white";
+                    addtocart.style.marginLeft="35px"
+                    addtocart.style.marginTop="5px"
+                    addtocart.style.width="80%"
+                    addtocart.style.borderRadius="10px"
+
+                    productbox.style.display="inline-block"
+                    productbox.style.width="45%"
+                    // productbox.style.height="150px"
+                    productbox.style.backgroundColor="bisque"
+                    productbox.style.borderStyle="solid";
+                    productbox.style.borderColor="red";
+                    productbox.style.borderRadius="10px"
+                    productbox.style.margin="10px"
+                    productbox.style.padding="5px"
+                });
+                createcart(cartlist)
+            }
+
+
+            function createcart(cartproducts){
+                cartitemspage.innerHTML="";
+                if(!cartproducts.length){
+                    var oops=document.createElement("h1");
+                    oops.innerHTML="Ooops! Your Cart is Empty.....";
+                    cartitemspage.appendChild(oops)
+                    oops.style.textAlign="Center"
+                    oops.style.marginTop="200px"
+
+                    var add=document.createElement("h4");
+                    add.innerHTML="Add some items to Cart!!!!"
+                    cartitemspage.appendChild(add)
+                    add.style.textAlign="center"
+                }
+                else{
+                    cartitemspage.innerHTML=""
+                    cartproducts.forEach(function(product,index){
+                        var item=document.createElement("div");
+                        var name=document.createElement("span");
+                        name.innerHTML=product["NAME"];
+                        item.appendChild(name);
+
+                        var rate=document.createElement("span");
+                        rate.innerHTML=product["PRICE"];
+                        item.appendChild(rate);
+
+                        var dec=document.createElement("button");
+                        dec.innerHTML="-";
+                        item.appendChild(dec);
+                        dec.onclick=function(){
+                            if(count.innerHTML>1)
+                            product["count"]-=1;
+                            createcart(cartlist);
+                            totalprice(cartlist);
+                        }
+
+                        var count=document.createElement("span");
+                        count.innerHTML=product["count"];
+                        item.appendChild(count);
+
+                        var inc=document.createElement("button");
+                        inc.innerHTML="+";
+                        item.appendChild(inc);
+                        inc.onclick=function(){
+                            cartproducts[index].count++;
+                            console.log(cartlist)
+                            totalprice(cartlist);
+                            createcart(cartlist);
+                        }
+
+                        var del=document.createElement("button");
+                        del.innerHTML="Remove";
+                        item.appendChild(del)
+                        del.onclick=function(){
+                            cartproducts.splice(index,1);
+                            createcart(cartlist);
+                            if(cartlist.length>0)
+                            totalprice(cartlist);
+                            // createproductspage(products);
+                        }
+                        // totalprice(cartlist)
+                        cartitemspage.appendChild(item)
+                    })
+                }
+
+            }      
+            function totalprice(cartproducts){
+                var total=document.createElement("h2");
+                var sum=cartproducts.reduce(function(a,product){
+                    console.log(product["PRICE"],product["count"])
+                    return (a+(product["PRICE"]*product["count"]));
+                },0)
+                Number(sum).toFixed("2")
+                total.innerHTML="TOTAL:"+sum;
+                cartitemspage.appendChild(total)
+            } 
+
+            createproductspage(products)
+        </script>
+    </body>
+</html>

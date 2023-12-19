@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 style="background-color:;"></h1> -->
+    <!-- <input type="text" onkeyup="go(event)">
+    <h1 id="h1"></h1> -->
+
+
+     <!-- <button onclick="sub1(event)">-</button>
+    <input type="text" id="text1" value="0">
+    <button onclick="add1(event)">+</button>
+    <button onclick="sub1(event)">-</button>
+    <input type="text" id="text100" value="0">
+    <button onclick="add1(event)">+</button> -->
+
+
+    <!-- <input type="text" onkeyup="go2(event)">
+    <button onclick="sub2()">-</button>
+    <input type="text" id="text2" value="1">
+    <button onclick="add2()">+</button>
+    <h1 id="total">Total:</h1> -->
+
+    <!-- <h1 id=""></h1>
+    <button onclick="sub31()">-</button>
+    <input type="text" id="text2" value="1">
+    <button onclick="add31()">+</button>
+    
+    <input type="text" onkeyup="got2(event)">
+    <button onclick="sub32()">-</button>
+    <input type="text" id="text2" value="1">
+    <button onclick="add32()">+</button>
+    
+    <input type="text" onkeyup="got(event)">
+    <button onclick="sub33()">-</button>
+    <input type="text" id="text2" value="1">
+    <button onclick="add33()">+</button>
+    <h1 id="total1">Total:</h1> -->
+
+    <!-- <div id="rate"></h1> -->
+    <script>
+    //     var total1=document.getElementById("total1")
+    //     var cart=[{
+    //         "rate":4000,
+    //         "count":1
+    //         },
+    //         {
+    //         "rate":3000,
+    //         "count":1
+    //         },
+    //         {
+    //         "rate":2000,
+    //         "count":1
+    //         }]
+    //         var x=document.getElementById("rate")
+    //         function createtable(obj)
+    //         {
+    //             document.getElementById("rate").innerHTML="";
+    //     obj.forEach(function(a,b){
+    //         var div=document.createElement("div")
+    //         var rate=document.createElement("div")
+    //         rate.innerHTML=a["rate"];
+    //         var div1=document.createElement("div")
+    //         var dec=document.createElement("button")
+    //         var value=document.createElement("div")
+    //         value.innerHTML=a["count"]
+    //         var inc=document.createElement("button")
+    //         dec.innerHTML="-";
+    //         dec.onclick=function(){
+    //             obj[b].count--;
+    //             console.log(obj)
+    //             createtable(obj)
+    //             totalcost()
+    //         };
+    //         inc.onclick=function(){
+    //             obj[b].count++;
+    //             createtable(obj)
+    //             totalcost()
+    //         };
+    //         inc.innerHTML="+"
+    //         div.appendChild(rate)
+    //         div1.appendChild(dec)
+    //         div1.appendChild(value)
+    //         div1.appendChild(inc)
+    //         div.appendChild(div1)
+    //         x.appendChild(div)
+            
+    //         div1.style.display="inline"
+    //         rate.style.display="inline"
+    //         value.style.display="inline"
+    //         value.style.margin="5px"
+    //         div.style.padding="10px"
+    //         div1.style.padding="5px"
+    //         div.style.marginBottom="10px"
+    //         div.style.borderStyle="solid";
+    //         div.style.borderColor="red";
+    //         div.style.backgroundColor="bisque"
+    //         div1.style.marginBottom="10px"
+    //         div1.style.marginLeft="1320px"
+    //         div.style.borderRadius="50px";
+    //         div1.style.align="center"
+    //     }) 
+    //     var total=document.createElement("div")
+    //         total.innerHTML=totalcost()
+    //         x.appendChild(total);
+    //         total.style.padding="10px"
+    //         total.style.marginBottom="10px"
+    //         total.style.borderStyle="solid";
+    //         total.style.borderColor="blue";
+    //         total.style.borderRadius="50px";
+    //         total.style.backgroundColor="skyblue"
+    // }
+    //         createtable(cart)  
+        
+    //     function totalcost(){
+    //         var s=0
+    //         cart.forEach(function(a,b){
+    //             s+=a["rate"]*a["count"]
+    //         })
+    //         return "Total:"+s  
+    //     } 
+
+        var ar=[{fn:"fn",ln:"ln"},{age:"age","num":"789"}];
+        var obj={
+            fn:"name",
+            ln:"lname"
+        }
+        console.log(ar+obj)
+
+
+
+        // function go(e){
+        //     var x=document.getElementById("h1")
+        //     x.innerHTML=e.target.value;
+        // }
+        
+        
+        // function add1(e)
+        // {
+        //     if(e.target.previousElementSibling.id==="text1")
+        //     {e.target.previousElementSibling.value++}
+        //     if(e.target.previousElementSibling.id==="text100")
+        //     {
+        //         var x=Number(e.target.previousElementSibling.value)
+        //         e.target.previousElementSibling.value=x+100}
+        // }
+        // function sub1(e)
+        // {
+        //     if(e.target.nextElementSibling.id==="text1")
+        //     {e.target.nextElementSibling.value--}
+        //     if(e.target.nextElementSibling.id==="text100")
+        //     {e.target.nextElementSibling.value-=100}
+        // }
+
+        // function add100()
+        // {
+        //     var x=document.getElementById("text100")
+        //     x.value=Number(x.value)+100
+        // }
+        // function sub100(){
+        //     document.getElementById("text100").value-=100;
+        // }
+
+       
+       
+        //     var x,y,z;
+        //     x=document.getElementById("total")
+        // function go2(e)
+        // {
+        //     y=Number(e.target.value)
+        //     x.innerHTML="Total:"+y*Number(document.getElementById("text2").value);
+        // }
+        // function add2()
+        // {
+        //     document.getElementById("text2").value++;
+        //     x.innerHTML="Total:"+y*Number(document.getElementById("text2").value);
+        // }
+        // function sub2(){
+        //     if(document.getElementById("text2").value>1){
+        //     document.getElementById("text2").value--;
+        //     x.innerHTML="Total:"+y*Number(document.getElementById("text2").value);
+        //     }
+        // }
+
+
+        
+              
+    </script>
+</body>
+</html>

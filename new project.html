@@ -1,0 +1,38 @@
+<html>
+    <head></head>
+    <body>
+            <button onclick="sub1(event)">-</button>
+            <input type="text" id="text1" value="0">
+            <button onclick="add1(event)">+</button>
+            <button onclick="sub1(event)">-</button>
+            <input type="text" id="text100" value="0">
+            <button onclick="add1(event)">+</button>
+
+            <script>
+                function add1(e)
+                {
+                    if(e.target.previousElementSibling.id==="text1")
+                    {
+                        e.target.previousElementSibling.value++
+                    }
+                    if(e.target.previousElementSibling.id==="text100")
+                    {
+                        var x=Number(e.target.previousElementSibling.value)
+                        e.target.previousElementSibling.value=x+100
+                    }
+                }
+
+                function sub1(e)
+                {
+                    if(e.target.nextElementSibling.id==="text1")
+                    {
+                        e.target.nextElementSibling.value--
+                    }
+                    if(e.target.nextElementSibling.id==="text100")
+                    {
+                        e.target.nextElementSibling.value-=100
+                    }
+                }
+            </script>
+    </body>
+</html>

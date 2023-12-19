@@ -1,0 +1,94 @@
+<html>
+    <head></head>
+    <body>
+        <table id="dtable">
+
+        </table>
+        <script>
+            var details=[
+                {
+                    "name":"praveen",
+                    "age":36,
+                    "gender":"male",
+                    "salary":10000,
+                    "city":"hyd"
+                },
+                {
+                    "name":"srikanth",
+                    "age":32,
+                    "gender":"male",
+                    "salary":20000,
+                    "city":"bangaluru"
+                },
+                {
+                    "name":"pradeep",
+                    "age":21,
+                    "gender":"male",
+                    "salary":25000,
+                    "city":"hyd"
+                },
+                {
+                    "name":"mounika",
+                    "age":20,
+                    "gender":"female",
+                    "salary":30000,
+                    "city":"nalgonda"
+                },
+                {
+                    "name":"nikhil",
+                    "age":22,
+                    "gender":"male",
+                    "salary":2000,
+                    "city":"guntur"
+                },
+                {
+                    "name":"riya",
+                    "age":14,
+                    "gender":"female",
+                    "salary":40000,
+                    "city":"indore"
+                }
+            ]
+            var table=document.getElementById("dtable")
+            var headrow=document.createElement("tr")
+            var h1=document.createElement("th")
+            h1.innerHTML="Name";
+            headrow.appendChild(h1);
+            var h2=document.createElement("th")
+            h2.innerHTML="Age";
+            headrow.appendChild(h2);
+            var h3=document.createElement("th")
+            h3.innerHTML="Gender";
+            headrow.appendChild(h3);
+            var h4=document.createElement("th")
+            h4.innerHTML="Salary";
+            headrow.appendChild(h4);
+            var h5=document.createElement("th")
+            h5.innerHTML="City";
+            headrow.appendChild(h5);
+            table.appendChild(headrow)
+                for(var i=0;i<details.length;i++)
+                {
+                    var row=document.createElement("tr")
+                    var c1= document.createElement("th")
+                    c1.innerHTML=details[i].name;
+                    row.appendChild(c1)
+                    var c2= document.createElement("th")
+                    c2.innerHTML=details[i].age;
+                    row.appendChild(c2)
+                    var c3= document.createElement("th")
+                    c3.innerHTML=details[i].gender;
+                    row.appendChild(c3)
+                    var c4= document.createElement("th")
+                    c4.innerHTML=details[i].salary;
+                    row.appendChild(c4)
+                    var c5= document.createElement("th")
+                    c5.innerHTML=details[i].city 
+                    row.appendChild(c5)
+                    table.append(row);
+                }
+                table.border="2"
+            
+        </script>
+    </body>
+</html>

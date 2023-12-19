@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+       <h1 id="d1">I'm Nothing</h1>
+        <button onclick="goto()">True/False</button>
+        <script>
+            var id=document.getElementById("d1");
+            id.style.width="200px";
+            id.style.height="150px";
+            id.style.border="2px solid black"
+            function goto()
+            {
+                if(id.innerHTML==="true")
+                id.innerHTML="false";
+                else
+                id.innerHTML="true";
+            }
+        </script>
+    </body>
+</html>

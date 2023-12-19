@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function perfect(a,b)
+        {
+            
+            for(var i=a;i<=b;i++)
+            {
+                var c=0;
+                for(j=1;j<i;j++)
+                if(i%j===0)
+                c=c+j;
+                if(c===i)
+                console.log(i)
+            }   
+        }
+        perfect(+prompt("Enter the start range"),+prompt("Enter the end range"))
+    </script>
+</body>
+</html>

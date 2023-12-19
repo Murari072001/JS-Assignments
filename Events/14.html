@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: burlywood;">
+    <h1 style="color: red;text-align: center;font-size: xx-large;font-weight: bolder;">Show images using URLs</h1>
+    <h3 style="text-align: center;"><label for="text" style="color: red;">Enter Image URL:</label><input type="text" name="" id="text"></h3>
+    <h1 style="text-align: center;">
+        <button style="background-color: orange;" onclick="goto(event)">Add Image</button>
+    </h1>
+    <div style="text-align: center;" id="imagebox"></div>
+
+    <script>
+        var ar=[];
+        function goto()
+        {
+            var url1=document.getElementById("text");
+            console.log(url1.value)
+            // ar.push(url.value)
+            var im=document.createElement("div")
+            im.style.display="inline-block"
+            im.style.margin="10px"
+            im.style.width="150px"
+            im.style.height="100px"
+            var img=("url("+url1.value+")");
+            im.style.backgroundImage=img;
+            im.style.backgroundSize="100%"
+            // im.src=url1.value;
+            document.getElementById("imagebox").appendChild(im)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <div id="images"></div>
+        <script>
+            var ar=["https://mastimorning.com/wp-content/uploads/2023/09/lord-ganesha-images-Wallpaper-Pics-HD-2.jpg","https://i.pinimg.com/736x/2a/bf/a5/2abfa5f2cc093b44e0ec89b445dfbd2c.jpg","https://w0.peakpx.com/wallpaper/889/160/HD-wallpaper-god-murugan-latest-murugan-godmurugan-hindugod-lord-murugan-lord-murugan-lord-shiva-thiruchendur-murugan-thumbnail.jpg"];
+            var di=document.getElementById("images")
+            for(var i=0;i<ar.length;i++)
+            {
+                var k=document.createElement("img");
+                k.src=ar[i];
+                k.style.height=300;
+                k.style.width=300;
+                k.style.margin=50;
+                di.appendChild(k);
+            }
+        </script>
+    </body>
+</html>

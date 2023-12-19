@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fact(a)
+        {
+            var s=1;
+            for(var i=a;i>=1;i--)
+            s=s*i;
+            return s;
+        }    
+        function strong(a,b)
+        {
+            for(var j=a;j<=b;j++)
+            {
+                var s=0
+            for(var i=j;i>0;i=parseInt(i/10))
+            {
+                s=s+fact(i%10);
+            }
+            // console.log(j)
+            // console.log(s)
+            if(j===s)
+            console.log(j+" is "+"Strong Number");
+            }
+        }
+        strong(+prompt("Enter the start range"),+prompt("Enter the end range"))
+    </script>
+</body>
+</html>

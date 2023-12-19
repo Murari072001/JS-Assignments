@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+        <div id="d1" onclick="goto()"></div>
+        <script>
+            var ar=["white","red","blue","green","yellow","pink","bisque","violet"];
+            var i=0;
+            var div=document.getElementById("d1")
+            div.style.border="2px solid black";
+            div.style.height="100px";
+            div.style.width="200px"
+            function goto(){
+                i++;
+                if(i===ar.length)
+                i=0;
+                div.style.backgroundColor=ar[i];
+            }
+        </script>
+    </body>
+</html>

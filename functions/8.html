@@ -7,17 +7,23 @@
 </head>
 <body>
     <script>
-        function digits(a)
+        function digits(a,b)
         {
+            if(a<0)
+            b("Enter the positive number",null)
+            else
+            {
             var k=0;
             for(var i=a;a>0;a=parseInt(a/10))
             {
                 k++;
             }
-            return k;
+            b(null,k);
         }
-        var num=digits(123456)
-        console.log(num)
+        }
+        digits(+prompt(),function(err,res){
+            err?console.log(err):console.log(res)
+        })
     </script>
 </body>
 </html>

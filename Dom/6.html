@@ -1,0 +1,72 @@
+<html>
+    <head></head>
+    <body>
+        <div id="block"></div>
+        <script>
+            var students = [
+                {
+                name:'jaya',
+                gender:'female',
+                place:'gachibowli',
+                },
+                {
+                name:'dasu',
+                gender:'male',
+                place:'kphb'
+                },
+                {
+                name:'swati',
+                gender:'female',
+                place:'pune'
+                },
+                {
+                name:'pallavi',
+                gender:'female',
+                place:'assam'
+                },
+                {
+                name:'kiran',
+                gender:'male',
+                place:'kondapur'
+                },
+                {
+                name:'thirumala',
+                gender:'male',
+                place:'madhapur'
+                },
+                {
+                name:'priya',
+                gender:'female',
+                place:'hitech'
+                }
+            ]
+            var div=document.getElementById("block");
+            var mainul=document.createElement("ul");
+            div.appendChild(mainul)
+            students.forEach(function(a,b) {
+                var mainli=document.createElement("li")
+                mainli.innerHTML=a.name;
+                var ul=document.createElement("ul");
+                mainli.appendChild(ul);
+                var li1=document.createElement("li")
+                li1.innerHTML=a.name;
+                var li2=document.createElement("li")
+                li2.innerHTML=a.name;
+                ul.appendChild(li1);
+                ul.appendChild(li2);
+                mainul.appendChild(mainli)
+                if(b%2!==0)
+                mainli.style.backgroundColor="skyblue"
+                else
+                mainli.style.backgroundColor="pink"
+            });
+            div.style.borderWidth=5
+            div.style.borderStyle="solid"
+            div.style.borderColor="red";
+            mainul.style.marginLeft=10
+            mainul.style.marginRight=10
+            mainul.style.marginTop=8
+            mainul.style.marginBottom=8
+        </script>
+    </body>
+</html>

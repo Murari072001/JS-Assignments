@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: burlywood;">
+    <h1 style="color: red;text-align: center;font-size: xx-large;font-weight: bolder;">Add Students</h1>
+    <div style="text-align: center">
+        <input type="text" name="" id="text"></h3>
+        <button style="background-color: orange;" onclick="goto(event)">Add Student</button>
+    </div>
+    <div style="text-align: center;" id="imagebox">
+        <ul id="list" style="display: inline-block;text-align: left;"></ul>
+    </div>
+
+    <script>
+        var ar=[];
+        function goto()
+        {
+            var url1=document.getElementById("text");
+            var im=document.createElement("li")
+            im.innerHTML=url1.value;
+            im.style.textAlign="center"
+            im.style.color="red";
+            document.getElementById("list").appendChild(im)
+        }
+    </script>
+</body>
+</html>

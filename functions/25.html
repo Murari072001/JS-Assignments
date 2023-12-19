@@ -21,8 +21,11 @@
         function arm(a)
         {
             var s=0;
+            var c=0;
             for(var i=a;i>0;i=parseInt(i/10))
-            s=(s)+((i%10)**3);
+            c++;
+            for(var i=a;i>0;i=parseInt(i/10))
+            s=(s)+((i%10)**c);
             if(s===a)
             return a+" is "+"Armstrong Number";
             else

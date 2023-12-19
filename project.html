@@ -1,0 +1,356 @@
+<html>
+    <head></head>
+    <body>
+        <div id="mainpage"></div>
+        <div id="filterside">
+            <div id="interestfilter">
+                <p id="interest">Interest</p>
+                <input type="radio" name="interest" onchange="interest(event)" id="interested" value="interested">Interest <br>
+                <input type="radio" name="interest" onchange="interest(event)" id="not interested" value="not interested">Not interested <br>
+                <input type="radio" name="interest" onchange="interest(event)" id="all" value="all">All
+            </div>
+            <div id="modefilter">
+                <p id="mode">Mode</p>
+                <input type="radio" name="mode" onchange="mode(event)" value="offline">Offline <br>
+                <input type="radio" name="mode" onchange="mode(event)" value="online" >Online<br>
+            </div>
+            <div id="coursesfilter">
+                <p id="course">Courses</p>
+                <input type="checkbox" name="course" onchange="course(event)" id="frontend angular">Angular <br>
+                <input type="checkbox" name="course" onchange="course(event)" id="frontend react">React <br>
+                <input type="checkbox" name="course" onchange="course(event)" id="fullStack JAVA">Full Stack Java <br>
+                <input type="checkbox" name="course" onchange="course(event)" id="MEAN">MEAN <br>
+                <input type="checkbox" name="course" onchange="course(event)" id="MERN">MERN <br>
+                <input type="checkbox" name="course" onchange="course(event)" id="devops">Devops <br>
+            </div>
+            <div id="date">
+                <p id="date">Date</p>
+                Start Date: <input type="date" name="date" id="startdate" onchange="date(event)"> <br>
+                End Date: <input type="date" name="date" id="enddate" onchange="date(event)"> <br>
+            </div>
+        </div>
+        <div id="tableside"></div>
+        <script>
+            var mainpage=document.getElementById("mainpage");
+            mainpage.style.display="flex";
+            var filterside=document.getElementById("filterside");
+            filterside.style.borderColor="red";
+            filterside.style.borderStyle="solid";
+            filterside.style.width="20%";
+            filterside.style.display="inline-block";
+            mainpage.appendChild(filterside)
+
+            var tableside=document.getElementById("tableside");
+            // tableside.style.border="2px"
+            // tableside.style.borderColor="red";
+            tableside.style.width="75%"
+            tableside.style.display="inline-block";
+            mainpage.appendChild(tableside)
+
+            var enquiryFormData = [
+    {
+        "date": 1/12/2023,
+        "name": "rohit sai",
+        "phone number": 1234557890,
+        "email": "rohit@gmail.com",
+        "courses": ["frontend angular", "MEAN"],
+        "mode": "online",
+        "feedback": [
+            {
+                "date_and_time": 1/12/2023,
+                "remarks": "",
+                "interest": "not interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 5/12/2023,
+        "name": "sri lohit",
+        "phone number": 9381248611,
+        "email": "lohit@gmail.com",
+        "courses": ["frontend react", "MERN"],
+        "mode": "offline",
+        "feedback": [
+            {
+                "date_and_time": 5/12/2023,
+                "remarks": "",
+                "interest": "interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 2/12/2023,
+        "name": "katta babu",
+        "phone number": 9876543210,
+        "email": "babu@gmail.com",
+        "courses": ["frontend angular", "MEAN", "devops"],
+        "mode": "offline",
+        "feedback": [
+            {
+                "date_and_time": 2/12/2023,
+                "remarks": "",
+                "interest": "interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 3/12/2023,
+        "name": "Gautam",
+        "phone number": 1234509876,
+        "email": "gautam@gmail.com",
+        "courses": ["devops"],
+        "mode": "offline",
+        "feedback": [
+            {
+                "date_and_time": 3/12/2023,
+                "remarks": "",
+                "interest": "interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 4/12/2023,
+        "name": "sree uma",
+        "phone number": 9876012345,
+        "email": "uma@gmail.com",
+        "courses": ["frontend angular", "MEAN", "devops"],
+        "mode": "offline",
+        "feedback": [
+            {
+                "date_and_time": 4/12/2023,
+                "remarks": "",
+                "interest": "not interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 2/12/2023,
+        "name": "krishna vamsi",
+        "phone number": 7075812345,
+        "email": "vamsi@gmail.com",
+        "courses": ["frontend react", "MERN","devops"],
+        "mode": "online",
+        "feedback": [
+            {
+                "date_and_time": 2/12/2023,
+                "remarks": "",
+                "interest": "interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 1/12/2023,
+        "name": "manoj",
+        "phone number": 9681209876,
+        "email": "manoj@gmail.com",
+        "courses": ["frontend angular"],
+        "mode": "online",
+        "feedback": [
+            {
+                "date_and_time": 1/12/2023,
+                "remarks": "",
+                "interest": "interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 3/12/2023,
+        "name": "siddarth",
+        "phone number": 8821112345,
+        "email": "siddarth@gmail.com",
+        "courses": ["fullStack JAVA"],
+        "mode": "offline",
+        "feedback": [
+            {
+                "date_and_time": 3/12/2023,
+                "remarks": "",
+                "interest": "interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 4/12/2023,
+        "name": "yogendra",
+        "phone number": 9848689221,
+        "email": "yogendra@gmail.com",
+        "courses": ["devops"],
+        "mode": "offline",
+        "feedback": [
+            {
+                "date_and_time": 4/12/2023,
+                "remarks": "",
+                "interest": "interested",
+                "next call": ""
+            }
+        ]
+    },
+    {
+        "date": 5/12/2023,
+        "name": "shiva",
+        "phone number": 9000550001,
+        "email": "shiva@gmail.com",
+        "courses": ["fullStack JAVA"],
+        "mode": "online",
+        "feedback": [
+            {
+                "date_and_time": 5/12/2023,
+                "remarks": "",
+                "interest": "interested",
+                "next call": ""
+            }
+        ]
+    }       
+]
+    window.localStorage.setItem("enquiries",JSON.stringify(enquiryFormData));
+    var studentenquiry=JSON.parse(window.localStorage.getItem("enquiries"));
+    // console.log(studentenquiry)
+
+    var filteredlist=studentenquiry;
+
+    function createtable(studentdetails)
+    {
+        tableside.innerHTML="";
+        var srch=document.createElement("input");
+        srch.type="search";
+        srch.innerHTML="search"
+        tableside.appendChild(srch)
+        var table=document.createElement("table");
+        var tablehead=document.createElement("tr");
+        var headname=document.createElement("th");
+        headname.innerHTML="Name";
+        tablehead.appendChild(headname);
+        var headmobile=document.createElement("th");
+        headmobile.innerHTML="Phone Number";
+        tablehead.appendChild(headmobile);
+        var heademail=document.createElement("th");
+        heademail.innerHTML="Email";
+        tablehead.appendChild(heademail);
+        var headcourse=document.createElement("th");
+        headcourse.innerHTML="Course";
+        tablehead.appendChild(headcourse);
+        var headdate=document.createElement("th");
+        headdate.innerHTML="Date";
+        tablehead.appendChild(headdate);
+        var headfeedback=document.createElement("th");
+        headfeedback.innerHTML="Feedback";
+        tablehead.appendChild(headfeedback);
+        table.appendChild(tablehead)
+        tableside.appendChild(table)
+
+        table.border="5px";
+        table.cellSpacing="0px"
+        table.style.textAlign="center"
+        studentdetails.forEach(function(student,index)
+        {
+            var newrow=document.createElement("tr");
+            var studentname=document.createElement("td")
+            studentname.innerHTML=student["name"];
+            newrow.appendChild(studentname);
+
+            var studentmobile=document.createElement("td");
+            studentmobile.innerHTML=student["phone number"];
+            newrow.appendChild(studentmobile);
+
+            var studentemail=document.createElement("td");
+            studentemail.innerHTML=student["email"];
+            newrow.appendChild(studentemail);
+
+            var studentcourse=document.createElement("td");
+            studentcourse.innerHTML=student["courses"];
+            newrow.appendChild(studentcourse);
+
+            var studentdate=document.createElement("td");
+            studentdate.innerHTML=student["date"];
+            newrow.appendChild(studentdate);
+
+            var studentremarks=document.createElement("td");
+            studentremarks.innerHTML=student.feedback[student.feedback.length-1]["remarks"];
+            newrow.appendChild(studentremarks)
+            table.appendChild(newrow)
+        })
+    }
+
+    function interestedfilter(filteredlist)
+    {
+        filteredlist=filteredlist.filter(function(student)
+        {
+            return student.feedback[student.feedback.length-1].interest===interestvalue;
+        })
+        createtable(filteredlist)
+        console.log(filteredlist);
+    }
+
+    function modefilter()
+    {
+        console.log(filteredlist)
+        filteredlist=filteredlist.filter(function(student)
+        {
+            return student.mode===modevalue;
+        })
+        createtable(filteredlist)
+        console.log(filteredlist);
+    }
+
+    function coursefilter()
+    {
+        filteredlist=filteredlist.filter(function(student){
+           return student.courses.some(function(a)
+            {
+                return coursesfilter.includes(a);
+            })
+        })
+        if(filteredlist.length===0)
+        filteredlist=studentenquiry
+    console.log(filteredlist)
+        createtable(filteredlist)
+    }
+    var interestvalue;
+    var modevalue;
+    var coursesfilter=[];
+    var datearray=[];
+
+    function interest(e){
+        interestvalue=e.target.value;
+        interestedfilter(filteredlist)
+        // if(interestvalue=="all")
+        // createtable(studentenquiry)        
+    }
+
+    function mode(e){
+        modevalue=e.target.value;
+        modefilter()
+    }
+    
+    function course(e){
+        var c=document.getElementById(e.target.id)
+        if(c.checked)
+        {
+        coursesfilter.push(e.target.id);
+        }
+        else{
+            coursesfilter.splice(coursesfilter.indexOf(e.target.id),1)
+        }
+        console.log(coursesfilter);
+        coursefilter()
+    }
+
+    function date(e){
+        if(e.target.id==="startdate")
+        datearray[0]=(e.target.value)
+        if(e.target.id==="enddate")
+        datearray[1]=e.target.value
+    }
+    
+    // filtermenu(filteredlist)
+    createtable(filteredlist)
+        </script>
+    </body>
+</html>

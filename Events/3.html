@@ -1,0 +1,22 @@
+<html>
+    <head></head>
+    <body style="background-color: bisque;">
+        <h1 style="color:red">Change Button Back ground Color on Click</h1>
+        <button onclick="bgclr()" id="btn">white</button>
+        <script>
+            function bgclr(){
+                var btn=document.getElementById("btn");
+                if(btn.innerHTML==="white"){
+                    btn.innerHTML="Green"
+                    btn.style.backgroundColor="green";
+                    btn.style.color="white"
+                }
+                else{
+                    btn.innerHTML="white"
+                    btn.style.backgroundColor="white";
+                    btn.style.color="black"
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body style="background-color: bisque;">
+        <h1 style="color: red; align-content: center;">Toggle Button to show true/false</h1>
+        <div style="align-content: center;"><button onclick="goto()" style="background-color: orange;">Toggle</button> <span id="d1" style="color: orange;">false</span></div>
+        <script>
+            function goto(){
+                var id=document.getElementById("d1")
+                if(id.innerHTML==="true")
+                {
+                    id.innerHTML="false";
+                }
+                else{
+                    id.innerHTML="true"
+                }
+            }
+        </script>
+    </body>
+</html>

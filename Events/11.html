@@ -1,0 +1,28 @@
+<html>
+    <head></head>
+    <body style="background-color: burlywood;">
+        <h1 style="text-align: center; color: red;">Show bulb on/off using toggle button</h1>
+        <div style="background-image:url('https://cdn1.iconfinder.com/data/icons/light-bulb-emoticons/512/Sad-Emoji-Emotion-Face-Expression-Feeling_1-512.png');background-size:100%;" id="image"></div>
+        <h1 style="text-align: center;"><button onclick="goto(event)" id="btn" style="background-color: orange;">ON</button></h1>
+        <script>
+            var img=document.getElementById("image")
+            img.style.height="300px";
+            img.style.width="300px";
+            img.style.textAlign="center";
+            function goto(e)
+            { 
+                var div=document.getElementById("btn");
+                var imge=document.getElementById("image");
+                if(div.innerHTML==="ON")
+                {
+                    imge.style.backgroundImage="url('https://png.pngtree.com/png-clipart/20230510/original/pngtree-happy-bulb-png-image_9156589.png')";
+                    div.innerHTML="OFF"
+                }
+                else{
+                    imge.style.backgroundImage="url('https://cdn1.iconfinder.com/data/icons/light-bulb-emoticons/512/Sad-Emoji-Emotion-Face-Expression-Feeling_1-512.png')";
+                    div.innerHTML="ON"
+                }
+            }
+        </script>
+    </body>
+</html>

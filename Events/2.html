@@ -1,0 +1,21 @@
+<html>
+    <head></head>
+    <body>
+        <h1 id="d1"></h1>
+        <button onclick="color(event)" value="red">RED</button>
+        <button onclick="color(event)" value="green">GREEN</button>
+        <button onclick="color(event)" value="blue">BLUE</button>
+        <button onclick="color(event)" value="white">Reset</button>
+        <script>
+            var div1=document.getElementById("d1");
+            div1.style.width="200px";
+            div1.style.height="100px";
+            div1.style.border="2px solid black"
+
+            function color(e){
+                var div=document.getElementById("d1");
+                div.style.backgroundColor=e.target.value;
+            }
+        </script>
+    </body>
+</html>

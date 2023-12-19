@@ -1,0 +1,100 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var people = [
+                            {
+                            "firstname": "praveen",
+                            "lastname": "gubbala",
+                            "age": 36,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 10000
+                            },
+                            {
+                            "firstname": "srikanth",
+                            "lastname": "gubbala",
+                            "age": 32,
+                            "gender": "male",
+                            "city": "bengaluru",
+                            "salary": 20000
+                            },
+                            {
+                            "firstname": "pradeep",
+                            "lastname": "reddy",
+                            "age": 21,
+                            "gender": "male",
+                            "city": "hyd",
+                            "salary": 25000
+                            },
+                            {
+                            "firstname": "mounika",
+                            "lastname": "mudiraj",
+                            "age": 20,
+                            "gender": "female",
+                            "city": "nalgonda",
+                            "salary": 30000
+                            },
+                            {
+                            "firstname": "nikhil",
+                            "lastname": "m",
+                            "age": 22,
+                            "gender": "male",
+                            "city": "guntur",
+                            "salary": 2000
+                            },
+                            {
+                            "firstname": "riya",
+                            "lastname": "bhadouria",
+                            "age": 14,
+                            "gender": "female",
+                            "city": "indore",
+                            "salary": 40000
+                            }
+                            ];
+
+                            var gen=['male'];
+                            var city=['guntur','indore','hyd'];
+                            var salary=[20000,50000];
+
+                            var filteredarray=people;
+
+                            function genfilter(list)
+                            {
+                                filteredarray=list.filter(function(a,b){
+                                if(a.gender===gen[0])
+                                {
+                                   return 1;
+                                }
+                                if(city.length>0)
+                                filtercity(filteredarray)
+                                // if(salary.length>0)
+                                // salaryfilter()
+                                // console.log(filteredarray)
+                            })
+                            }
+                            function filtercity(list)
+                            {
+                                filteredarray=list.filter(function(a,b)
+                                {
+                                    if(city.find(function(c,d){
+                                        if(a.city===c)
+                                        {
+                                        return 1;
+                                        }
+                                        else
+                                        return 0
+                                    })){
+                                        return 1
+                                    }
+                                })
+                                if(gen.length>0)
+                                genfilter(filteredarray)
+                                console.log(filteredarray)
+                            }
+
+                            genfilter(filteredarray)
+                            // console.log(filteredarray)
+        </script>
+    </body>
+</html>

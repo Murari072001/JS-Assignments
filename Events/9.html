@@ -1,0 +1,28 @@
+<html>
+    <head></head>
+    <body style="background-color: bisque">
+        <h1 style="color: red;text-align: center;">Change background color of the box using buttons</h1>
+        <div style="text-align: center;"><div id="d1"></div> <button onclick="goto(event)" id="on">ON</button>&nbsp;<button onclick="goto(event)" id="off">OFF</button></div>
+        <script>
+            var x=document.getElementById("d1");
+            x.style.border="1px solid red";
+            x.style.width="200px";
+            x.style.height="100px";
+            x.style.backgroundColor="white"
+            function goto(e){
+                    var id=document.getElementById(e.target.id);
+                    if(e.target.id==="on"){
+                        id.style.backgroundColor="orange";
+                        document.getElementById("off").style.backgroundColor="white";
+                        x.style.backgroundColor="yellow";
+                    }
+                    else{
+                        document.getElementById("on").style.backgroundColor="white";
+                        document.getElementById("off").style.backgroundColor="orange";
+                        x.style.backgroundColor="white";
+                    }
+                    
+            }
+        </script>
+    </body>
+</html>

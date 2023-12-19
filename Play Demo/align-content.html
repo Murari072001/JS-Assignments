@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contain{
+            width: 50%;
+            border: 5px solid black;
+            margin: 2px;
+            padding: 10px;
+            background-color: silver;
+        }
+        .stylechange{
+            height: 30px;
+            width: 90% ;
+            align-content: center;
+            background-color: black;
+            margin: 10px;
+            color: white;
+            padding-left: 15px;
+            padding-top: 15px;
+            opacity: 70%;
+            display: inline-block;
+        }
+        .stylename{
+            color:pink;
+
+        }
+        .stylecolor{
+            color: rgba(155, 237, 155, 0.826);
+        }
+
+        input,label{
+            cursor: pointer;
+        }
+        .allitems{
+            align-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <div class="contain">
+            <form action="" name="sidepanel"></form>
+                
+                    <div class="stylechange">
+                        <input onchange="changealign(event)" type="radio" name="alignchange" id="stretch" checked>
+                        <label for="stretch"><span class="stylename">align-content</span>: <span class="stylecolor">stretch</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changealign(event)" type="radio" name="alignchange" id="center" >
+                        <label for="center"><span class="stylename">align-content</span>: <span class="stylecolor">center</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changealign(event)" type="radio" name="alignchange" id="flex-start" >
+                        <label for="flex-start"><span class="stylename">align-content</span>: <span class="stylecolor">flex-start</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changealign(event)" type="radio" name="alignchange" id="flex-end" >
+                        <label for="flex-end"><span class="stylename">align-content</span>: <span class="stylecolor">flex-end</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changealign(event)" type="radio" name="alignchange" id="space-between" >
+                        <label for="space-between"><span class="stylename">align-content</span>: <span class="stylecolor">space-between</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changealign(event)" type="radio" name="alignchange" id="space-around" >
+                        <label for="space-around"><span class="stylename">align-content</span>: <span class="stylecolor">space-around</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changealign(event)" type="radio" name="alignchange" id="space-evenly" >
+                        <label for="space-evenly"><span class="stylename">align-content</span>: <span class="stylecolor">space-evenly</span>;</label>
+                    </div>
+            
+                    
+            </form>
+        </div>
+
+        <div class="contain allitems">
+            <h3 class="items" style="margin: 0px; height: 20px; background-color: orange ;"></h3>
+            <h3 class="items" style="margin: 0px; height: 20px; background-color: rgb(87, 210, 252);"></h3>
+            <h3 class="items" style="margin: 0px; height: 20px; background-color: pink;"></h3>
+        </div>
+    </div>
+    <script>
+        // document.querySelectorAll("h3").forEach((a)=>{a.style.alignContent="stretch"})
+    </script>
+</body>
+</html>

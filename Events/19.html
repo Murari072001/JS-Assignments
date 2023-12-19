@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color:burlywood;">
+    <h1 style="color: red;text-align: center;">Add Contact cards</h1>
+    <h4 style="color: red;text-align: center;"><label for="name">Name: </label><input type="text"  id="name"></h4>
+    <h4 style="color: red;text-align: center;"><label for="num">Number: </label><input type="text"  id="num"></h4>
+    <h4 style="color: red;text-align: center;"><label for="email">Email: </label><input type="text"  id="email"></h4>
+    <h4 style="color: red;text-align: center;"><label for="imgurl">Enter Image URL: </label><input type="text"  id="imgurl"></h4>
+    <h4 style="text-align: center;"><button onclick="addcard()" style="background-color: orange;">Add Contact</button></h4>
+    <div id="cards"></div>
+
+    <script>
+        function addcard()
+        {
+            var namevalue=document.getElementById("name");
+            var numbervalue=document.getElementById("num");
+            var mailvalue=document.getElementById("email");
+            var urlvalue=document.getElementById("imgurl");
+            
+            var card=document.createElement("div")
+            card.style.width="250px";
+            card.style.height="250px";
+            card.style.backgroundColor="yellow";
+            card.style.border="2px solid red";
+            card.style.textAlign="center"
+            card.style.margin="5px";
+
+            var im=document.createElement("div");
+            im.style.width="100px";
+            im.style.height="100px";
+            im.style.borderRadius="50%";
+            im.style.marginLeft="50%";
+            im.style.marginTop="5px";
+            im.style.translate="-50%"
+            console.log("url("+urlvalue.value+")")
+            var imageurl=("url("+urlvalue.value+")");
+            im.style.backgroundImage=imageurl;
+            im.style.backgroundSize="100%"
+            card.appendChild(im)
+
+            var namerow=document.createElement("p");
+            namerow.innerHTML="Name:"+namevalue.value;
+            namerow.style.color="red";
+            card.append(namerow);
+
+            var numberrow=document.createElement("p");
+            numberrow.innerHTML="Number:"+numbervalue.value;
+            numberrow.style.color="red";
+            card.appendChild(numberrow)
+
+            var mailrow=document.createElement("p");
+            mailrow.innerHTML="Email:"+mailvalue.value;
+            mailrow.style.color="red";
+            card.appendChild(mailrow);
+
+            document.getElementById("cards").appendChild(card)
+        }
+    </script>
+</body>
+</html>

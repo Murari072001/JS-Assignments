@@ -7,15 +7,21 @@
 </head>
 <body>
     <script>
-        function fact(a)
+        function fact(a,cb)
         {
+            if(a<0)
+            cb('Enter Positive number',null)
+            else
+            {
             var b=1;
             for(var i=a;i>=1;i--)
             b*=i;
-            return b;
+            cb(null,b);
+            }
         }
-        var n1=+prompt("Enter the number")
-        console.log(fact(n1));
+        (fact(+prompt("Enter the number"),function(err,res){
+            err?console.log(err):console.log(res)
+        }));
     </script>
 </body>
 </html>

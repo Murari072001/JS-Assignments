@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contain{
+            width: 50%;
+            border: 5px solid black;
+            margin: 2px;
+            padding: 10px;
+            background-color: silver;
+        }
+        .stylechange{
+            height: 30px;
+            width: 90% ;
+            align-content: center;
+            background-color: black;
+            margin: 10px;
+            color: white;
+            padding-left: 15px;
+            padding-top: 15px;
+            opacity: 70%;
+            display: inline-block;
+        }
+        .stylename{
+            color:pink;
+
+        }
+        .stylecolor{
+            color: rgba(155, 237, 155, 0.826);
+        }
+
+        input,label{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <div class="contain">
+            <form action="" name="sidepanel"></form>
+                
+                    <div class="stylechange">
+                        <input onchange="changecolor(event)" type="radio" name="colorchange" id="red" checked>
+                        <label for="red"><span class="stylename">accent-color</span>: <span class="stylecolor">red</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changecolor(event)" type="radio" name="colorchange" id="#0000ff" >
+                        <label for="#0000ff"><span class="stylename">accent-color</span>: <span class="stylecolor">#0000ff</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changecolor(event)" type="radio" name="colorchange" id="rgb(0, 255, 0)" >
+                        <label for="rgb(0, 255, 0)"><span class="stylename">accent-color</span>: <span class="stylecolor">rgb(0, 255, 0)</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changecolor(event)" type="radio" name="colorchange" id="black" >
+                        <label for="black"><span class="stylename">accent-color</span>: <span class="stylecolor">black</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changecolor(event)" type="radio" name="colorchange" id="orange" >
+                        <label for="orange"><span class="stylename">accent-color</span>: <span class="stylecolor">orange</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changecolor(event)" type="radio" name="colorchange" id="pink" >
+                        <label for="pink"><span class="stylename">accent-color</span>: <span class="stylecolor">pink</span>;</label>
+                    </div>
+                    <div class="stylechange">
+                        <input onchange="changecolor(event)" type="radio" name="colorchange" id="auto" >
+                        <label for="auto"><span class="stylename">accent-color</span>: <span class="stylecolor">auto</span>;</label>
+                    </div>
+            
+                    
+            </form>
+        </div>
+
+        <div class="contain">
+            <form action="" name="myform"></form>
+                <h3>Checkboxes:</h3>
+                <input type="checkbox" class="forminput" id="bike" checked><label for="bike">I have a bike</label>
+                <input type="checkbox" class="forminput" id="car" checked><label for="car">I have a car</label>
+                <br>
+                <h3>Radiobuttons:</h3>
+                <input type="radio" class="forminput" id="html" checked><label for="html">HTML</label>
+                <input type="radio" class="forminput" id="css" checked><label for="css">CSS</label>
+                <br>
+                <h3>Range:</h3>
+                <label for="vol">Volume:</label><input type="range" class="forminput" id="vol">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll("input.forminput").forEach((a)=>{a.style.accentColor="red"})
+        function changecolor(e)
+        {
+            
+            console.dir(document.querySelectorAll("input.forminput"))
+            document.querySelectorAll("input.forminput").forEach((a)=>{a.style.accentColor=e.target.id})
+            console.dir(e)
+        }
+    </script>
+</body>
+</html>

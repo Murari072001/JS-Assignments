@@ -9,10 +9,13 @@
     <script>
         function arm(a)
         {
-            var k=0
+            var k=0;
+            var c=0;
+            for(var i=a;i>0;i=parseInt(i/10))
+            c++;
             for(var i=a;i>0;i=parseInt(i/10))
             {
-                k+=((i%10)**3);
+                k+=((i%10)**c);
             }
             if(k===a)
             return "Armstrong Number";

@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body style="background-color: bisque;">
+        <h1 style="color:red; text-align: center;">Like and Dislike counter</h1>
+        <h1 style="text-align: center;"><button onclick="goto(event)" style="background-color: rgb(52, 245, 52);" value="like">Like</button><span id="like" value="0">0</span></h1>
+        <h1 style="text-align: center;"><button onclick="goto(event)" style="background-color: red;" value="dislike">Disike</button><span id="dislike" >0</span></h1>
+        <script>
+            function goto(e)
+            {
+                if(e.target.value==="like")
+                {
+                    document.getElementById("like").innerHTML++;
+                }
+                else{
+                    document.getElementById("dislike").innerHTML++;
+                }
+            }
+        </script>
+    </body>
+</html>
