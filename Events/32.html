@@ -12,9 +12,22 @@
     </div>
     <script>
         function findage(e){
-            var x= new Date(document.getElementById("age").value).getTime()
-            var y=new Date().getTime()
-            document.getElementById("years").innerHTML="Your age is:"+(y-x)/(1000*60*60*24*365);
+            var x= new Date(document.getElementById("age").value)
+            var y=new Date()
+            var year=y.getFullYear()-x.getFullYear()
+            var month=y.getMonth()-x.getMonth()
+            var date=y.getDate()-x.getDate()
+            if(date<0)
+            {
+                month--;
+                date+=30;
+            }
+            if(month<0)
+            {
+                year--;
+                month+=12;
+            }
+            document.getElementById("years").innerHTML="Your age is:"+(year)+"Years "+(month)+"Months"+(date)+"Days";
         }
     </script>
 </body>
