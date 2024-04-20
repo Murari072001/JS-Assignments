@@ -63,12 +63,14 @@
                 // interval()
                 document.getElementById("stopwatch").innerHTML=`${min1}${min0}:${sec1}${sec0}:${ms}`
             },10)
+            console.log(interval);
         }
 
         function oncall()
         {
             document.getElementById("start").style.visibility="visible";
             document.getElementById("pause").style.visibility="hidden";
+            
             clearInterval(interval)
         }
 
@@ -84,6 +86,7 @@
             document.getElementById("start").style.visibility="visible";
             document.getElementById("pause").style.visibility="hidden"; 
         }
+        
     </script>
 </body>
 </html>
